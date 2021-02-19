@@ -34,7 +34,6 @@ def save_reservation(request):
 	passenger.phoneNumber = request.data['phoneNumber']
 	passenger.save()
 
-
 	reservation = Reservation()
 	reservation.flight = flight
 	reservation.passenger = passenger
@@ -53,4 +52,3 @@ class PassengerViewSet(viewsets.ModelViewSet):
 class ReservationViewSet(viewsets.ModelViewSet):
 	queryset = Reservation.objects.all()
 	serializer_class = ReservationSerialier
-
