@@ -9,12 +9,13 @@ class FlightSerialier(serializers.ModelSerializer):
 		model = Flight
 		fields = '__all__'
 
+#1st custom validation
 	def validate_flightNumber(self,flightNumber):
 		if(re.match("[a-zA-Z0-9]*$",flightNumber)==None):
 			raise serializers.ValidationError("Invalid! Make sure it is a alpha numeric.")
 		return flightNumber
 
-
+	
 
 class PassengerSerialier(serializers.ModelSerializer):
 	class Meta:
